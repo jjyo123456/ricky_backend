@@ -1,3 +1,6 @@
+
+@Enitiy
+@Table(name = "")
 public class fare_info_data_class{
     @Id 
     @AutoGennerate(GennerationType = Gennerate.UNQIUE)
@@ -22,3 +25,4 @@ public class fare_info_data_class{
 
 
 }
+
