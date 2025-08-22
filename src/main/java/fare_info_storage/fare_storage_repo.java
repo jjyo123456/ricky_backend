@@ -1,0 +1,1 @@
+public class fare_info_storage_repo extends JpaRepository<fare_info_data_class , int>{}
