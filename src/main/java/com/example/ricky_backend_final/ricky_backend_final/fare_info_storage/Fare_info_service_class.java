@@ -1,15 +1,10 @@
-package fare_info_storage;
+package com.example.ricky_backend_final.ricky_backend_final.fare_info_storage;
 
-//import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
 @Service
-//@RequiredArgsConstructor
-
-
 public class Fare_info_service_class {
 
     private final Fare_storage_repo fareRepository;
@@ -17,7 +12,6 @@ public class Fare_info_service_class {
     public Fare_info_service_class(Fare_storage_repo fareRepository) {
         this.fareRepository = fareRepository;
     }
-
 
     // Add new fare
     public Fare_info_data_class addFare(Fare_info_data_class fare) {

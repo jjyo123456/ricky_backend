@@ -1,4 +1,4 @@
-package sms_based_fare;
+package com.example.ricky_backend_final.ricky_backend_final.sms_based_fare;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;

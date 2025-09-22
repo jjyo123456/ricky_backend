@@ -1,7 +1,7 @@
-package fare_info_storage;
+package com.example.ricky_backend_final.ricky_backend_final.fare_info_storage;
 
-import driver_info_storage.Driver;
-import vehicle_info_storage.Vehicle;
+import com.example.ricky_backend_final.ricky_backend_final.driver_info_storage.Driver;
+import com.example.ricky_backend_final.ricky_backend_final.vehicle_info_storage.Vehicle;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
