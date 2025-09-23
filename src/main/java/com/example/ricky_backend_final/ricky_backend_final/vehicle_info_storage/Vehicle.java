@@ -1,9 +1,12 @@
 package com.example.ricky_backend_final.ricky_backend_final.vehicle_info_storage;
 
 import com.example.ricky_backend_final.ricky_backend_final.driver_info_storage.Driver;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.util.UUID;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "vehicles")
 public class Vehicle {
@@ -15,7 +18,10 @@ public class Vehicle {
 
     @OneToOne
     @JoinColumn(name = "driver_id", unique = true)
+    @JsonBackReference
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Driver driver;
+
 
     @PrePersist
     public void prePersist() {

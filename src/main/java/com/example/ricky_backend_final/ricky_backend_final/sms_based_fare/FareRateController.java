@@ -1,23 +1,27 @@
 package com.example.ricky_backend_final.ricky_backend_final.sms_based_fare;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
+@RequestMapping("/api/fare")
 public class FareRateController {
 
-    private final fare_rate_service fareRateService = new fare_rate_service();
+    private final FareRateService fareRateService;
 
-    @GetMapping("/get_fare_rate")
+    public FareRateController(FareRateService fareRateService) {
+        this.fareRateService = fareRateService;
+    }
+
+    @GetMapping("/get")
     public ResponseEntity<fare_rate_object> getFareRate() {
-        fare_rate_object rate = fareRateService.get_fare_rate();
+        fare_rate_object rate = fareRateService.getFareRate();
         return ResponseEntity.ok(rate);
     }
 
-    @PostMapping("/change_fare_rate")
+    @PostMapping("/change")
     public ResponseEntity<String> changeFareRate(@RequestParam double newRate) {
-        fareRateService.change_fare_rate(newRate);
-        return ResponseEntity.ok("Fare rate updated");
+        fareRateService.changeFareRate(newRate);
+        return ResponseEntity.ok("Fare rate updated successfully");
     }
 }

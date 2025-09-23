@@ -53,6 +53,6 @@ public class DriverService {
 
     // Search by vehicle number
     public List<Driver> getDriversByVehicleNumber(String vehicleNumber) {
-        return driverRepository.findByVehicleNumber(vehicleNumber);
+        return driverRepository.findByVehiclePlateNumber(vehicleNumber);
     }
 }

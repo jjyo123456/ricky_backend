@@ -20,6 +20,7 @@ public interface DriverRepository extends JpaRepository<Driver, String> {
     List<Driver> findByLicenseNumber(String licenseNumber);
 
     // Find driver by vehicle number using a JOIN query
-    @Query("SELECT d FROM Driver d JOIN d.vehicle v WHERE v.vehicleNumber = :vehicleNumber")
-    List<Driver> findByVehicleNumber(@Param("vehicleNumber") String vehicleNumber);
+    @Query("SELECT d FROM Driver d JOIN d.vehicle v WHERE v.plateNumber = :plateNumber")
+    List<Driver> findByVehiclePlateNumber(@Param("plateNumber") String plateNumber);
+
 }
